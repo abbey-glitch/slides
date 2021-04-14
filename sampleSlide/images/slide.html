@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width inital-scale=1.0">
+        <link rel="styleSheet" href="slide.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="images">
+                <div class="image">
+                    <img src="banner-02.jpg" width="200" height="200">
+                </div> 
+                <div class="image">
+                    <img src="banner-03.jpg" width="200" height="200">
+                </div>
+                <div class="image">
+                    <img src="job.jpg" width="200" height="200">
+                </div>
+                <div class="image">
+                    <img src="mama.jpg" width="200" height="200">
+                </div>
+                
+            </div>
+        </div>
+        <script>
+            const stacks = document.getElementsByClassName("images")[0]
+             let stacks_children = stacks.children;
+             let nth_image = stacks_children.length;
+             //let last_image = nth_image - 1;
+             let counter = 0;
+             carousel();
+             setInterval(carousel, 3000)
+             function carousel(){
+                 let active_stack = stacks_children[counter]
+                 for(let i=0; i<stacks_children.length; i++){
+                     if(i !== counter){
+                         inactive_stack = stacks_children[i];
+                         inactive_stack.style.backgroundColor = 'red';
+                         inactive_stack.style.transition = "all 2s linear";
+                         inactive_stack.style.transform = "translateX(0)";
+                     }else{
+                        inactive_stack = stacks_children[i];
+                         active_stack.style.backgroundColor = 'yellow';
+                         //active_stack.style.transition = "all 2s linear";
+                         //active_stack.style.transform = "translateX(-50rem)";
+                         inactive_stack.style.transition = "all 2s linear";
+                         inactive_stack.style.transform = "translateX(-100rem)";    
+                     }
+                 }
+                 counter = counter + 1;
+                 if(counter == nth_image + 1){
+                     counter = 0;
+                     carousel();
+                 }
+             }
+
+        </script>
+    </body>
+</html>

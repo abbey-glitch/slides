@@ -1,0 +1,7 @@
+.images{
+    display:inline-flex;
+}
+.images>.image+.image{
+    padding-right: 2rem;
+    padding-left: 2rem;
+}

@@ -1,0 +1,26 @@
+*{
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: auto;
+    background-color: grey;
+    margin: 0 4rem;
+}
+.images{
+    border: 2px groove blue;
+    padding: 2rem;
+    display: inline-flex;
+}
+/*.images > fig + fig{
+    padding-left: 4rem;
+    display: none;
+}
+/*.images:hover.images>fig:first-child, .images>fig:last-child:hover, .images>fig:nth-child(2):hover{
+    transition: all 2s linear;
+    transform: translateX(-120rem);
+}
+.images:hover.images>fig:last-child, .images:hover.images>fig:nth-child(2){
+    display: inline-flex;
+}*/

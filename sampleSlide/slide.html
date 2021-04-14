@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <meta name="abiodun image slider" description="this is an image slider">
+        <link rel="styleSheet" href="slide.css">
+        <title>image slider</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="images">
+                <fig>
+                    <img src="images/banner-02.jpg" alt="group1" width="500" class="image">
+                </fig> 
+                <fig>
+                    <img src="images/banner-03.jpg" alt="group2" width="500" class="image">
+                </fig> 
+                <fig>
+                    <img src="images/job.jpg" alt="job" width="500" height="300" class="image">
+                </fig>
+                <fig>
+                    <img src="images/mama.jpg" alt="mama" width="500" height="300" class="image">
+                </fig>
+            </div>
+        </div>
+        <footer></footer>
+        <script>
+            slider();
+            setInterval(slider, 1000);
+            function slider(){
+                let images = document.querySelectorAll(".image")
+                images.forEach((image) =>{
+                  image.addEventListener('load', function(slider){
+                      for(let i=0; i<images.length; i++){
+                          if(images[i] == images[0]){
+                            images[i].style.transition = "all 2s linear";
+                            images[i].style.transform = "translateX(-160rem)";
+                          }else if(images[i] == images[1]){
+                            images[i].style.transition = "all 2s linear";
+                            images[i].style.transform = "translateX(-30rem)";
+                            images[2].style.transition = "all 2s linear";
+                            images[2].style.transform = "translateX(-25rem)";
+                            images[3].style.transition = "all 2s linear";
+                            images[3].style.transform = "translateX(-20rem)";
+                          }else if(images[i] == images[2]){
+                              images[1].style.transition = 'all 2s linear';
+                              images[1].style.transform += 'translateX(-40rem)';
+                              images[i].style.transition = "all 2s linear";
+                              images[i].style.transform += "translateX(-35rem)";
+                              images[3].style.transition = "all 2s linear";
+                              images[3].style.transform += "translateX(-35rem)";
+                          }else if(images[i] == images[3]){
+                            images[1].style.transition = 'all 2s linear';
+                            images[1].style.transform += 'translateX(-45rem)'
+                            images[2].style.transition = "all 2s linear";
+                            images[2].style.transform += "translateX(-40rem)";
+                            images[3].style.transition = "all 2s linear";
+                            images[3].style.transform += "translateX(-40rem)";
+                            //images[3].style.transition = "all 2s linear";
+                            //images[3].style.transform = "translateX(-20rem)";
+                          }
+                      }
+                  })
+                })
+                //location.reload();
+                /*let imageArr = [];
+                imageArr.push(images)
+                for(let i=0; i<imageArr.length; i++){
+                    //console.log(imageArr[i])
+                    imageArr[i][0].style.transition = 'all 2s linear';
+                    imageArr[i][0].style.transform = 'translateX(-50rem)';
+                    imageArr[i][1].style.transition = 'all 2s linear';
+                    imageArr[i][1].style.transform = 'translateX(-80rem)';
+                    imageArr[i][2].style.transition = 'all 2s linear';
+                    imageArr[i][2].style.transform = 'translateX(-120rem)';
+                    imageArr[i][3].style.transition = 'all 2s ease-in';
+                    imageArr[i][3].style.transform = 'translateX(-160rem)';
+                }*/
+            }
+            location.reload();
+        </script>    
+    </body>
+</html>
